@@ -1,0 +1,109 @@
+:root {
+  --primary-color: #ea526f;
+  --secondary-color: #d7af70;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+main {
+  min-height: calc(100vh - 150px - 60px);
+}
+
+.btn {
+  padding: 15px 25px;
+  border-radius: 5px;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+form input:not(input[type="radio"]) {
+  height: 30px;
+  border: 1px solid #ccc;
+  font: 1em sans-serif;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+form label:not(.radio-label) {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.radio-group div {
+  display: flex;
+  flex-direction: row !important;
+  margin-bottom: 1rem;
+}
+
+.radio-group input {
+  margin-right: 10px;
+}
+
+.login-success {
+  opacity: 0;
+  font-size: 18px;
+  background-color: #c4ebc8;
+  border: 1px solid #0b5563;
+  padding: 20px 30px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+}

@@ -1,0 +1,89 @@
+.product {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.product h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.product-main-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eee;
+  margin-left: 10px;
+  height: 450px;
+}
+
+.product-main-image img {
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.product-sub-images {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-sub-images div {
+  border: 1px solid #eee;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.product-sub-images img {
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-price {
+  font-weight: 600;
+  width: fit-content;
+  border-radius: 5px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.product-actions button {
+  margin-top: 20px;
+}
+
+.product-images {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-quantity {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.product-quantity label {
+  margin-right: 10px;
+}
+
+.product-quantity input {
+  width: 50px;
+  height: 30px;
+  border: 1px solid var(--secondary-color);
+  text-align: center;
+}
+
+.product-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

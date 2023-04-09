@@ -1,0 +1,32 @@
+.form {
+  margin: 0 auto;
+  width: 300px;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-link {
+  margin-top: 20px;
+}
+
+.auth-link a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+#error {
+  color: red;
+  margin-bottom: 10px;
+}
