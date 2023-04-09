@@ -9,7 +9,7 @@
       <div class="nav-links-right">
         <?php
         session_start();
-        $authed = $_SESSION["username"] ?? false;
+        $authed = $_SESSION["email"] ?? false;
 
         if ($authed) {
           echo '

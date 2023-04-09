@@ -5,8 +5,8 @@
 
       <form class="login-form form" action="" method="POST">
         <div class="form-control">
-          <label for="username">Username</label>
-          <input type="text" name="username" id="username" placeholder="Enter your username" onchange="cache_uname()">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" placeholder="Enter your email" onchange="cache_email()">
         </div>
         <div class="form-control">
           <label for="password">Password</label>
@@ -27,29 +27,39 @@
 </main>
 
 <?php
-include "configure.php";
+include "application_top.php";
 
-// Prefiilling the username field
 echo "<script>
-const uname = document.getElementById('username');
-function cache_uname() {
-  localStorage.setItem('cached_uname', uname.value);
+const email = document.getElementById('username');
+function cache_email() {
+  localStorage.setItem('cached_email', uname.value);
 }
-uname.value = localStorage.getItem('cached_uname') || ''
+email.value = localStorage.getItem('cached_email') || ''
 </script>";
 
-// $username and $password is coming from configure.php
-function login($username, $password)
+function login($email, $password)
 {
-  return $username == username && $password == password;
+  global $connection;
+  $query = "SELECT * FROM users WHERE email = '$email'";
+  $result = mysqli_query($connection, $query);
+  if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_array($result);
+    if ($password == $row["PASSWORD"]) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }  
 }
 
 if (isset($_POST["login"])) {
-  $username = trim(strtolower($_POST["username"]));
+  $email = trim(strtolower($_POST["email"]));
   $password = trim(($_POST["password"]));
 
-  if (login($username, $password)) {
-    $_SESSION["username"] = $username;
+  if (login($email, $password)) {
+    $_SESSION["email"] = $email;
     header("Location: index.php?login=success");
   } else {
     echo "<script> error.innerHTML='Invalid Username or Password'</script>";

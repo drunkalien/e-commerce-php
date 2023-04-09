@@ -1,11 +1,15 @@
-<div class="products-grid">
-  <?php
-  include "db.php";
 
-  foreach ($products as $product) {
+<div class="products-grid">
+<?php 
+include "application_top.php";
+$query = "SELECT * FROM product";
+
+$result = mysqli_query($connection, $query);
+
+while($product = mysqli_fetch_array($result)) {
     echo "
     <div class='product-item'>
-      <img src='$product[img]' alt='product image' />
+      <img src='$product[image]' alt='product image' />
       <div class='product-info'>
         <div class='product-details'>
           <h3>$product[name]</h3>
@@ -19,6 +23,6 @@
       </div>
     </div>
     ";
-  }
-  ?>
+}
+?>
 </div>
