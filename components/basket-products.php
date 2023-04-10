@@ -26,7 +26,7 @@
             <input type='number' value='$product[quantity]' id='quantity' />
           </div>
           <div class='product-actions'>
-            <a class='btn view-btn' href='product.php'>View product</a>
+            <a class='btn view-btn' href='product.php?id=$product[id]'>View product</a>
             <a href='checkout.php' class='btn checkout-btn'>Checkout this product</a>
           </div>
         </div>
