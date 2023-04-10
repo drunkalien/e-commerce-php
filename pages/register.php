@@ -1,9 +1,5 @@
 <?php 
 include "application_top.php";
-$query = "SELECT username FROM users WHERE username = 'john_doe'";
-$result = mysqli_query($connection, $query);
-$row = mysqli_fetch_array($result);
-echo $row['username'];
 ?>
 
 <main class="auth">
@@ -46,6 +42,7 @@ echo $row['username'];
 
         if(check_user_exists($email, $email_query)) {
           echo "<p id='error'>Email already exists</p>";
+          return;
         } else {
           echo "<p id='error'></p>";
         }
@@ -58,6 +55,8 @@ echo $row['username'];
         } else {
           echo "Error creating user: " . mysqli_error($connection);
         }
+
+        header("Location: login.php");
       }
       ?>
       <div class="auth-link">
